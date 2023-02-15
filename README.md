@@ -10,6 +10,13 @@ U7P4L IN
 <p align="center">
       ⚡Bruteforce attack on Facebook account using python script⚡
 </p>
+
+
+### Install Requirements (on Linux)
+
+```python
+>> apt-get install git python3 python3-pip python python-pip
+```
   
 #### INSTALL TOOL ON TERMUX
 ```python
