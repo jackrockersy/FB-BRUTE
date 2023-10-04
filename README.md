@@ -35,14 +35,16 @@ Bruteforce attack on Facebook account using 10 Million password list,This tools 
 ## Contributing
 Feel Free To Clone This Project. For Major Changes, Please Open An Issue First To Discuss What You Would Like To Change Or Add, Thank You!!.
 
+<img src="https://github.com/U7P4L-IN/U7P4L-IN/blob/master/Warning.gif" float="center">
+
 ### Installation
 #### Kali Linux / Ubuntu / Parrot OS :
 ```python
-    sudo apt-get update && apt-get install git
-    git clone https://github.com/U7P4L-IN/FB-BRUTE.git
-    cd FB-BRUTE
-    ls
-    sudo python3 FB.py or python FB2.py
+sudo apt-get update && apt-get install git
+git clone https://github.com/U7P4L-IN/FB-BRUTE.git
+cd FB-BRUTE
+ls
+sudo python3 FB.py or python FB2.py
 ```
 
 # Report bugs
